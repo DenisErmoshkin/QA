@@ -25,7 +25,7 @@ def quest():
     qwe1.send_keys('Qwertyuiop[1974')
     qwe1.send_keys(Keys.ENTER)
 
-    time.sleep(3)
+    time.sleep(7)
 
     qwe2 = driver.find_element(By.XPATH, '//*[@id="app"]/div/div/div[1]/div[3]/div/div/a[1]')
     qwe2.click()
@@ -38,7 +38,7 @@ def quest():
 
     time.sleep(3)
 
-    return asd
+    return asd, qwe3.text
 
 a = quest()
 print(a)

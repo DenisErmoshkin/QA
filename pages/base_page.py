@@ -1,14 +1,15 @@
 from selenium.webdriver.support.ui import WebDriverWait as wait
 from selenium.webdriver.support import expected_conditions as EC
-#ererrewrq
-#Qwertyuiop[1974
-#https://passport.yandex.ru/auth/add?from=cloud&origin=docs_web&retpath=https%3A%2F%2Fdocs.yandex.ru%2Fdocs%3Ftype%3Ddocx&backpath=https%3A%2F%2Fdocs.yandex.ru
+
+
+# ererrewrq
+# Qwertyuiop[1974
+# https://passport.yandex.ru/auth/add?from=cloud&origin=docs_web&retpath=https%3A%2F%2Fdocs.yandex.ru%2Fdocs%3Ftype%3Ddocx&backpath=https%3A%2F%2Fdocs.yandex.ru
 
 class BasePage:
     def __init__(self, driver, url):
         self.driver = driver
         self.url = url
-
 
     def open(self):
         self.driver.get(self.url)

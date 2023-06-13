@@ -2,7 +2,7 @@ from data.data import Person
 from faker import Faker
 
 
-faker = Faker('ru_RU')
+faker = Faker()
 def generated_person():
     yield Person(
         full_name= faker.first_name() + " " + faker.last_name(),

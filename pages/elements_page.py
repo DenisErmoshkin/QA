@@ -1,6 +1,6 @@
 import time
 from generator.generator import generated_person
-from locators.elements_page_locators import TextBoxPageLocators
+from locators.elements_page_locators import TextBoxPageLocators, CheckBoxPageLocators
 from pages.base_page import BasePage
 
 
@@ -26,3 +26,16 @@ class TextBoxPage(BasePage):
         output_cur_addr = self.element_is_present(self.locators.CREATED_CURRENT_ADRESS).text
         output_per_addr = self.element_is_present(self.locators.CREATED_PERMANENT_ADRESS).text
         return output_name, output_email, output_cur_addr, output_per_addr
+
+
+class CheckBoxPage(BasePage):
+    locators = CheckBoxPageLocators()
+
+    def open_full_list(self):
+        self.element_is_visible(self.locators.EXPAND_ALL_BUTTON).click()
+
+    def click_random_checkbox(self):
+        item_list = self.elements_are_visible(self.locators.ITEM_LIST)
+        for item in item_list:
+            self.go_to_element(item)
+            item.click()

@@ -2,10 +2,6 @@ from selenium.webdriver.support.ui import WebDriverWait as wait
 from selenium.webdriver.support import expected_conditions as EC
 
 
-# ererrewrq
-# Qwertyuiop[1974
-# https://passport.yandex.ru/auth/add?from=cloud&origin=docs_web&retpath=https%3A%2F%2Fdocs.yandex.ru%2Fdocs%3Ftype%3Ddocx&backpath=https%3A%2F%2Fdocs.yandex.ru
-
 class BasePage:
     def __init__(self, driver, url):
         self.driver = driver
@@ -33,4 +29,4 @@ class BasePage:
         return wait(self.driver, timeout).until(EC.element_to_be_clickable(locator))
 
     def go_to_element(self, element):
-        self.driver_execute_script('argument[0].scrollIntoView();', element)
+        self.driver.execute_script('arguments[0].scrollIntoView();', element)

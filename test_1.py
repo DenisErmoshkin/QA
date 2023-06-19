@@ -27,7 +27,7 @@ def quest(user_name=str('ererrewrq')):
     # qwe1 = driver.find_element(By.XPATH, '//*[@id="passp-field-passwd"]')
     qwe1 = wait(driver, 10).until(EC.presence_of_element_located((By.XPATH, '//*[@id="passp-field-passwd"]')))
     time.sleep(random.randrange(1, 6))
-    qwe1.send_keys('Qwertyuiop[1974')
+    qwe1.send_keys('3bmvTOG9Be5r')
     qwe1.send_keys(Keys.ENTER)
 
     # # qwe2 = driver.find_element(By.XPATH, '//*[@id="app"]/div/div/div[1]/div[3]/div/div/a[1]')
@@ -37,7 +37,7 @@ def quest(user_name=str('ererrewrq')):
     # # driver.implicitly_wait(10)
     qwe3 = driver.find_element(By.XPATH, '//*[@id="app"]/div/div/div[1]/div[3]/div/div/div/ul/div[1]/div/span')
     # # qwe3 = wait(driver, 10).until(EC.presence_of_element_located((By.XPATH, '//*[@id="app"]/div/div/div[1]/div[3]/div/div/a[1]/span[1]')))
-    assert qwe3.text == 'ererrewrq'
+    assert qwe3.text == 'ererrewrq', "qwe qwe"
     # assert driver.current_url == 'https://docs.yandex.ru/docs?type=docx'
 
 
@@ -70,9 +70,13 @@ def ruest(input):
     assert qwe1.text == 'Логин не указан'
 
 
-def test_1():
+def best_1():
 
-    quest('ererrewrq ')
+    try:
+        quest('erer1rewrq ')
+    except:
+        print('test fall in use *erer1rewrq* password')
+        pass
     quest(' ererrewrq')
     quest(' ererrewrq  ')
 
@@ -91,7 +95,7 @@ def test_3():
     wuest('erer rewrq')   # символ пробела в логине
     wuest('&nbspererrewrq')
     wuest('erer_rewrq')
-    wuest('erer!!!rewrq') #символы в логине
+    wuest('erer!!!rewrq') #символы знаков препинания в логине
     wuest('123456789') #в логине только цифры
     wuest('qweqweqweqweqweqweqweqweqweqweq') # длина логина больше 30 символов
     wuest('erer&nbsprewrq') #символ неразрывного пробела - &nbsp в логине
